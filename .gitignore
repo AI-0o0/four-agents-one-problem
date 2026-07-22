@@ -1,1 +1,32 @@
+# Virtual Environment
+agent_env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
 .env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
