@@ -1,16 +1,17 @@
-from shared.data import FLIGHTS
-from tools.flight_tools import (
-    check_alternative_transport,
+from tools.travel_status_tools import (
+    get_flight_status,
     get_delay_duration,
+    check_alternative_transport,
 )
-from tools.booking_tools import (
-    check_refund_eligibility,
-    calculate_refund_amount,
-    process_refund,
+
+from tools.finance_and_decision_tools import (
+    CheckRefundEligibility,
+    CalculateRefundAmount,
+    ProcessRefund,
+    IssueTravelVoucher,
 )
-from tools.customer_tools import notify_customer
+
 from tools.escalation_tools import (
-    issue_travel_voucher,
     escalate_to_human,
 )
 
@@ -21,57 +22,46 @@ def run_agent():
 
     flight_id = input("Flight ID: ").strip().upper()
     booking_id = input("Booking ID: ").strip().upper()
+    destination = input("Destination Airport Code: ").strip().upper()
 
-    if flight_id not in FLIGHTS:
-        print("Flight not found.")
-        return
+    # Rule 1: Flight Cancelled
+    if get_flight_status.invoke(flight_id) == "Cancelled":
 
-    flight = FLIGHTS[flight_id]
-
-    # Rule 1
-    if flight["status"] == "Cancelled":
-
-        alternatives = check_alternative_transport(
-            flight["arrival_airport"]
-        )
+        alternatives = check_alternative_transport.invoke(destination)
 
         if alternatives:
             print("Alternative transport found:")
             print(alternatives)
 
         else:
-            if check_refund_eligibility(booking_id):
-                refund = calculate_refund_amount(booking_id)
-                process_refund(booking_id)
+            if CheckRefundEligibility.invoke(booking_id):
+
+                refund = CalculateRefundAmount.invoke(booking_id)
+                ProcessRefund.invoke(booking_id)
 
                 print(f"Refund of ${refund} processed.")
 
             else:
-                escalate_to_human(booking_id)
+                escalate_to_human.invoke(booking_id)
                 print("Case escalated.")
 
         return
 
-    # Rule 2
-    delay = get_delay_duration(flight_id)
+    # Rule 2: Delay > 6 hours
+    delay = get_delay_duration.invoke(flight_id)
 
     if delay > 360:
-        issue_travel_voucher(booking_id)
+        IssueTravelVoucher.invoke(booking_id)
         print("Hotel voucher issued.")
         return
 
-    # Rule 3
+    # Rule 3: Delay <= 2 hours
     if delay <= 120:
-        notify_customer(
-            booking_id,
-            "Please wait. Your flight will depart shortly."
-        )
-        print("Customer notified.")
+        print("Customer notified to wait for the flight.")
         return
 
-    # Rule 4
-    # else -> escalate_to_human
-    escalate_to_human(booking_id)
+    # Rule 4: Otherwise
+    escalate_to_human.invoke(booking_id)
     print("Case escalated to human support.")
 
 
