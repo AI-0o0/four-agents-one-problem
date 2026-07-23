@@ -1,0 +1,142 @@
+[
+  {
+    "city": "Cairo",
+    "country": "Egypt",
+    "name": "Cairo International Airport",
+    "skyId": "CAI",
+    "entityId": "104120222"
+  },
+  {
+    "city": "Giza",
+    "country": "Egypt",
+    "name": "Sphinx International Airport",
+    "skyId": "SPX",
+    "entityId": "199775241"
+  },
+  {
+    "city": "Alexandria",
+    "country": "Egypt",
+    "name": "Borg El Arab Airport",
+    "skyId": "HBE",
+    "entityId": "95673378"
+  },
+  {
+    "city": "Luxor",
+    "country": "Egypt",
+    "name": "Luxor International Airport",
+    "skyId": "LXR",
+    "entityId": "95673512"
+  },
+  {
+    "city": "Aswan",
+    "country": "Egypt",
+    "name": "Aswan International Airport",
+    "skyId": "ASW",
+    "entityId": "95673580"
+  },
+  {
+    "city": "Rome",
+    "country": "Italy",
+    "name": "Rome Fiumicino Airport",
+    "skyId": "FCO",
+    "entityId": "95565065"
+  },
+  {
+    "city": "Rome",
+    "country": "Italy",
+    "name": "Rome Ciampino Airport",
+    "skyId": "CIA",
+    "entityId": "95565062"
+  },
+  {
+    "city": "Milan",
+    "country": "Italy",
+    "name": "Milan Malpensa Airport",
+    "skyId": "MXP",
+    "entityId": "95565050"
+  },
+  {
+    "city": "Milan",
+    "country": "Italy",
+    "name": "Milan Linate Airport",
+    "skyId": "LIN",
+    "entityId": "95565051"
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "name": "Charles de Gaulle Airport",
+    "skyId": "CDG",
+    "entityId": "95565040"
+  },
+  {
+    "city": "Paris",
+    "country": "France",
+    "name": "Orly Airport",
+    "skyId": "ORY",
+    "entityId": "95565041"
+  },
+  {
+    "city": "London",
+    "country": "United Kingdom",
+    "name": "Heathrow Airport",
+    "skyId": "LHR",
+    "entityId": "95565010"
+  },
+  {
+    "city": "London",
+    "country": "United Kingdom",
+    "name": "Gatwick Airport",
+    "skyId": "LGW",
+    "entityId": "95565011"
+  },
+  {
+    "city": "Istanbul",
+    "country": "Turkey",
+    "name": "Istanbul Airport",
+    "skyId": "IST",
+    "entityId": "95674020"
+  },
+  {
+    "city": "Dubai",
+    "country": "UAE",
+    "name": "Dubai International Airport",
+    "skyId": "DXB",
+    "entityId": "95673850"
+  },
+  {
+    "city": "Abu Dhabi",
+    "country": "UAE",
+    "name": "Zayed International Airport",
+    "skyId": "AUH",
+    "entityId": "95673860"
+  },
+  {
+    "city": "Doha",
+    "country": "Qatar",
+    "name": "Hamad International Airport",
+    "skyId": "DOH",
+    "entityId": "95673870"
+  },
+  {
+    "city": "New York",
+    "country": "USA",
+    "name": "John F. Kennedy Airport",
+    "skyId": "JFK",
+    "entityId": "95565001"
+  },
+  {
+    "city": "New York",
+    "country": "USA",
+    "name": "Newark Airport",
+    "skyId": "EWR",
+    "entityId": "95565002"
+  },
+  {
+    "city": "Los Angeles",
+    "country": "USA",
+    "name": "Los Angeles International Airport",
+    "skyId": "LAX",
+    "entityId": "95565003"
+  }
+]
