@@ -1,6 +1,20 @@
 {
-    "12345": {
-        "name": "John Doe",
-        "email": "john.doe@example.com"
-    }
+  "C001": {
+    "name": "Ahmed Ali",
+    "phone": "+201111111111",
+    "email": "ahmed@email.com",
+    "vip": false
+  },
+  "C002": {
+    "name": "Sara Mohamed",
+    "phone": "+201222222222",
+    "email": "sara@email.com",
+    "vip": true
+  },
+  "C003": {
+    "name": "Omar Hassan",
+    "phone": "+201333333333",
+    "email": "omar@email.com",
+    "vip": false
+  }
 }
